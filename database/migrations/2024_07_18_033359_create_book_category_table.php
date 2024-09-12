@@ -18,6 +18,12 @@ return new class extends Migration
             // $table->id();
             // $table->foreignId('book_id')->constrained()->onDelete('cascade');
             // $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Category::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Book::class)->constrained()->onDelete('cascade');
+            $table->primary(['category_id','book_id']);
+
+            // $table->timestamps();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignIdFor(Book::class)->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignIdFor(Category::class)->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->primary(['category_id','book_id']);
