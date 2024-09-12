@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Old Logs</title>
+</head>
+<body>
+    <form action="/logs/delete-old" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete Old Logs</button>
+    </form>
+</body>
+</html>
